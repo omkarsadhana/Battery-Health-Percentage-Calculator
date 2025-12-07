@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battery Health Percentage Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style1.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <h2>BATTERY HEALTH PERCENTAGE CALCULATOR</h2>
+        <button class="exit-btn">EXIT</button>
+    </header>
+
+    <section align="center" class="title-section">
+        <h3>Battery Health Percentage Calculator For Laptop</h3>
+        <h5>(For All Brands Applicable)</h5>
+    </section>
+
+    <!-- MAIN CALCULATOR CARD -->
+    <section class="calculator-box">
+
+        <div class="calc-left">
+            <label for="fullCap">Current Capacity</label>
+            <input type="number" id="fullCap" placeholder="Enter Current Capacity" />
+
+            <label for="designCap">Original Capacity</label>
+            <input type="number" id="designCap" placeholder="Enter Original Capacity" />
+
+            <div class="btn-group">
+                <button class="btn-calc" onclick="calculateHealth()">Calculate</button>
+                <button class="btn-reset" onclick="resetAll()">Reset</button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="calc-right">
+            <p class="small-label">Battery Health (%)</p>
+            <h1 id="resultPercent">0%</h1>
+            <p id="resultMessage" class="result-message">Enter values to calculate</p>
+        </div>
+
+    </section>
+
+    <!-- BAD → GOOD BAR -->
+    <div class="bar-wrap">
+        <img id="indicator" src="caret-down.png" class="indicator" alt="" />
+        <div class="bar" id="healthBar"></div>
+        <div class="bar-labels">
+            <span>BAD</span>
+            <span>GOOD</span>
+        </div>
+    </div>
+
+    <!-- FORMULA & INFO (kept from original) -->
+    <section class="formula-box">
+        <h2>How does this Battery Health Calculator work?</h2>
+        <p>
+            Battery Health (%) is calculated using the ratio between <b>Full Charge Capacity</b> and
+            <b>Design Capacity</b>. As batteries age, their full charge capacity decreases, indicating overall degradation.
+        </p>
+
+        <div class="formula">
+            <p><b>Battery Health (%)</b> = (Full Charge Capacity ÷ Design Capacity) × 100</p>
+        </div>
+
+        <h2>What Good/Bad Battery Health Looks Like?</h2>
+        <ul>
+            <li><b>90–100%:</b> Excellent</li>
+            <li><b>80–89%:</b> Good</li>
+            <li><b>70–79%:</b> Moderate</li>
+            <li><b>50–69%:</b> Weak – Consider replacing soon</li>
+            <li><b>Below 50%:</b> Poor – Replace battery immediately</li>
+        </ul>
+    </section>
+
+    <section class="formula-box">
+        <h2>Why Battery Health Drops?</h2>
+        <p>Laptop batteries use lithium-ion cells, and these naturally wear out over time due to: <br>
+            <ul>
+                <li>Charging cycles (0% → 100% → 0%)</li>
+                <li>Heat</li>
+                <li>Fast charging</li>
+                <li>Keeping the laptop plugged in continuously</li>
+                <li>Age of the battery</li>
+            </ul>
+                So, as the battery ages, its maximum capacity decreases.</p>
+    </section>
+
+    <section class="formula-box">
+        <h2>Why Battery Health Matters?</h2>
+        <ul>
+            <li>Shows how long your battery can last on a charge</li>
+            <li>Helps you know when a battery replacement is needed</li>
+            <li>Predicts performance and battery backup time</li>
+        </ul>
+    </section>
+
+    <section class="formula-box">
+        <h2>Step-by-step guide to check Battery Health on a Windows laptop (works for Windows 10 & 11):</h2>
+        <p><b>Open Command Prompt as Administrator:</b> <br>
+            <ul>
+                <li>Press Windows key, type cmd, right-click Command Prompt → Run as administrator.</li>
+            </ul>
+            <p>In the elevated command window type: <b><i>powercfg /batteryreport</i></b></p>
+            <ul>
+                <li>Press Enter.</li>
+                <li>Windows will generate a file and show its path (usually something like C:\Users\Username\battery-report.html).</li>
+            </ul>
+            <b>Open the report:</b>
+            <ul>
+                <li>Navigate to the shown path and double-click battery-report.html to open it in your web browser.</li>
+            </ul>
+    </section>
+
+    <section class="formula-box">
+        <h2></h2>
+        <p></p>
+    </section>
+
+    <footer>
+        © 2025 Omkar. All Rights Reserved.
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>

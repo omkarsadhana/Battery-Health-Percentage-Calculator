@@ -1,0 +1,163 @@
+/* Reset + base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+    font-family: 'Inter', sans-serif;
+    background: #F8F8F8;
+    color: #111;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3E3EF8;
+    padding: 12px 22px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+.header h2 {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+.exit-btn {
+    background: #ff5c5c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.title-section {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* CALCULATOR CARD (thick outer border like design) */
+.calculator-box {
+    width: 80%;
+    max-width: 1000px;
+    margin: 36px auto 18px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+    border: 18px solid #0d294d; /* thick dark navy border to match design */
+    box-shadow: 0 8px 30px rgba(13,41,77,0.08);
+}
+
+/* Left column */
+.calc-left { flex: 1.1; min-width: 300px; }
+.calc-right { flex: 0.9; min-width: 260px; text-align: center; }
+
+/* Labels + inputs */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #222;
+    font-weight: 600;
+}
+input[type="number"] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: #eaeaea;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+/* Buttons */
+.btn-group { display: flex; gap: 16px; margin-top: 6px; }
+.btn-calc, .btn-reset {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 28px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(180deg,#0a22ff,#0017d9);
+    box-shadow: 0 6px 18px rgba(10,34,255,0.12);
+}
+.btn-reset { background: linear-gradient(180deg,#0a22ff,#0017d9); }
+
+/* Divider */
+.divider { width: 2px; height: 170px; background: rgba(13,41,77,0.06); align-self: stretch; border-radius: 2px; }
+
+/* Right column: battery health display */
+.small-label { color: #333; font-weight: 700; margin-bottom: 6px; }
+#resultPercent {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 90px;
+    line-height: 0.95;
+    color: #0b0b0b;
+    margin: 6px 0;
+}
+.result-message {
+    color: #666;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* BAD→GOOD BAR area */
+.bar-wrap {
+    width: 80%;
+    max-width: 980px;
+    margin: 24px auto 32px;
+    position: relative;
+}
+.bar {
+    height: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff2f2f 0%, #ff7a1a 30%, #9dbb1f 60%, #20ff3a 100%);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+.indicator {
+    width: 18px;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    transition: left 0.35s cubic-bezier(.2,.9,.3,1);
+    transform: translateX(-50%);
+}
+
+/* labels under bar */
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: 800;
+    color: #111;
+    font-size: 14px;
+}
+
+/* formula & other sections kept smaller */
+.formula-box {
+    width: 80%;
+    max-width: 1000px;
+    margin: 16px auto 40px;
+    color: #222;
+}
+.formula-box h2 { margin-bottom: 8px; }
+.formula { background: #f0f5ff; padding: 12px 16px; border-left: 4px solid #4d63ff; border-radius: 6px; margin: 12px 0;}
+
+/* footer */
+footer { text-align: center; color: #777; padding: 18px 0 36px; font-size: 14px; }
+
+/* Responsive tweaks */
+@media (max-width: 880px) {
+    .calculator-box { flex-direction: column; padding: 22px; }
+    .divider { display: none; height: 0; width: 100%; }
+    #resultPercent { font-size: 64px; }
+    .bar-wrap { width: 90%; }
+}

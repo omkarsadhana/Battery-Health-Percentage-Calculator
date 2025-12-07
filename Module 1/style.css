@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #F8F8F8;
+    color: #000;
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3E3EF8;
+    padding: 15px 20px;
+}
+
+.header h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.exit-btn {
+    background: #ff3b3b;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.title-section {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* MAIN CALCULATOR BOX */
+.calculator-box {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #f8f9fe;
+    padding: 30px;
+    border-radius: 18px;
+    border: 3px solid #d3dbff;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.calc-left,
+.calc-right {
+    flex: 1;
+    min-width: 260px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 6px;
+    border: 1px solid #d8d8d8;
+}
+
+.btn-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-calc {
+    flex: 1;
+    padding: 12px;
+    background: #0400FF;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-reset {
+    flex: 1;
+    padding: 12px;
+    background: #0400FF;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+}
+
+.divider {
+    width: 2px;
+    background: #d7d7d7;
+}
+
+/* RESULT SECTION */
+.result-label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#resultPercent {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.result-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* BAR */
+.bar-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.indicator {
+    width: 10px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    transition: 0.4s ease;
+}
+
+.bar {
+    width: 100%;
+    height: 18px;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+}
+
+.bar-red {
+    width: 33%;
+    background: #ff4b4b;
+}
+
+.bar-orange {
+    width: 34%;
+    background: #ffb347;
+}
+
+.bar-green {
+    width: 33%;
+    background: #4cd964;
+}
+
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* FORMULA SECTION */
+.formula-box {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.formula-box h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.formula {
+    background: #e6ebff;
+    padding: 15px;
+    border-left: 4px solid #4d63ff;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .divider {
+        display: none;
+    }
+    .calculator-box {
+        flex-direction: column;
+    }
+}
